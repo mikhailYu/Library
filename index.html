@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+  <div class="container">
+      <div class="headerContainer">
+          <div class="headerName">
+              <h1>PERSONAL LIBRARY</h1>
+            </div>
+      </div>
+
+      <div class="mainContainer">
+        <div class="booksContainer">
+            
+        </div>
+        <div class="sideContainer">
+            <div class="infoList">
+                <div class="totalBooks">Total books: </div>
+                <div class="totalPages">Total pages: </div>
+                <div class="totalRead">Total read: </div>
+                <div class="totalUnread">Total unread: </div>
+            </div>
+
+            <div class="addBookForm">
+                <fieldset>
+                    <form action="#" id="newBookForm">
+                        <div> 
+                            <p><label for="author">Author:</label></p>
+                            <input type="text" id="author" name="author" maxlength="25" required>
+                        </div>
+                        <div> 
+                            <p><label for="title">Title:</label></p>
+                            <input type="text" id="title" name="title" maxlength="25" required>
+                        </div>
+                        <div> 
+                            <p><label for="pages">Pages:</label></p>
+                            <input type="number" id="pages" name="pages" maxlength="25" required>
+                        </div>
+                        <div>
+                            <p><label class="readCheckbox">Read?</label></p>
+                            <input type="checkbox" id="readCheckbox" name="readCheckbox" required>
+                        </div>
+                    </form>
+                </fieldset>
+                <div class="addBookButton">
+                    <button type="button">Add book</button>
+                </div>
+                <div class="testbutton">TEST!</div>
+            </div>
+        </div>
+      </div>
+
+      <div class="footer">
+          <footer>Created by Mikhail Y.
+               <a href="https://github.com/mikhailYu" 
+               target="_blank">GITHUB</a></footer>
+      </div>
+  </div>  
+  <script src="script.js"></script>
+</body>
+</html>

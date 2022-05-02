@@ -1,0 +1,159 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+    background: none;
+    outline: none;
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+    /*-webkit-appearance: none;*/
+    font-family: "Raleway", sans-serif ;
+} 
+
+
+body
+{
+    height: 100%;
+}
+.container
+{
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+}
+
+.headerContainer
+{
+    grid-row: 1 / 2;
+    background-color: rgb(149, 198, 255);
+    min-height: 100px;
+    height: 15vh;
+    max-height: 15vh;
+}
+
+.mainContainer
+{
+    grid-row: 2 / 3;
+    background-color: rgb(73, 149, 224);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    min-height: 80vh;
+}
+
+
+.booksContainer
+{
+    grid-column: 1 / 2;
+    padding: 50px;
+    display: grid;
+    grid-auto-rows: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-gap: 40px
+}
+
+.cardContainer
+{
+    grid-column: ;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 5%;
+    width: 200px;
+    height: 300px;
+    font-size: 25px;
+    justify-content: space-between;
+    background-color: rgb(36, 119, 214);
+}
+
+.cardTextContainer
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 100%;
+    
+}
+
+.cardUpperText
+{
+    font-size: 20px;
+}
+.cardLowerText
+{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.cardOptions
+{
+    display: flex;
+    justify-content: space-evenly;
+    height: 50px;
+}
+
+.cardRead
+{
+    display: flex;
+    background-color: rgb(0, 172, 51);
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    
+}
+.cardRead>button
+{
+    color: white;
+    cursor: pointer;
+}
+
+.cardDelete
+{
+    display: flex;
+    background-color: rgb(133, 185, 197);
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.cardDelete>button>img
+{
+    width: 40%;
+    position: relative;
+    top: 3px;
+}
+
+.cardDelete>button
+{
+    width: 100%;
+}
+.cardDelete>button:hover
+{
+    transform: scale(1.1);
+}
+
+.sideContainer
+{
+    grid-column: 2 / 3;
+    background-color: rgb(27, 145, 255);
+}
+
+.footer
+{
+    grid-row: 3 / 4;
+    background-color: rgb(14, 31, 44);
+    min-height: 30px;
+    max-height: 5vh;
+    height: 5vh;
+}
+
+.testbutton
+{
+    background-color: red;
+    cursor: pointer;
+}
