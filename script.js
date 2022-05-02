@@ -6,7 +6,7 @@ myLibrary = [],
 bookCard, newBook, formDataTitle, formAuthor,formTitle,
 formPages,formRead,createCardContainer, createCardTextContainer, createCardUpperText,
 createCardLowerText, createCardOptions, createCardRead, createCardDelete,
-createButton, trashImg
+createButton, trashImg, trashButton
 
 addBookButton.addEventListener("click",submitForm);
 
@@ -15,7 +15,6 @@ function Book(title, author, pages, isRead){
     this.author = author
     this.pages = pages
     this.isRead = isRead
-    index = myLibrary.length;
 };
 
 function submitForm(){
@@ -45,8 +44,10 @@ function updateDOM(){
 };
 
 function createBookCard(){
+    let index = myLibrary.length-1;
+
     createCardContainer = document.createElement("div")
-    createCardContainer.classList.add("cardContainer")
+    createCardContainer.classList.add("cardContainer-" + index)
     booksContainer.appendChild(createCardContainer);   
     
     createCardTextContainer = document.createElement("div")
@@ -97,13 +98,22 @@ function createBookCard(){
     createCardDelete = document.createElement("div")
     createCardDelete.classList.add("cardDelete")
     createCardOptions.appendChild(createCardDelete)
-    createButton = document.createElement("button")
-    createCardDelete.appendChild(createButton)
+    trashButton = document.createElement("button")
+    createCardDelete.appendChild(trashButton)
     trashImg = document.createElement("IMG")
     trashImg.src = "./images/deleteIcon.png"
-    createButton.appendChild(trashImg);
+    trashButton.appendChild(trashImg);
+
+    trashButton.addEventListener("click", deleteCard);
+    
+    function deleteCard(){
+        let deleteThis = document.querySelector(".cardContainer-" + index)
+        deleteThis.remove();
+    }
     
 }
+
+
 
 
 

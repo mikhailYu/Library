@@ -56,7 +56,7 @@ body
     grid-gap: 40px
 }
 
-.cardContainer
+div[class^="cardContainer"]
 {
     grid-column: ;
     display: flex;
