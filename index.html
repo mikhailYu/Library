@@ -25,10 +25,10 @@
         </div>
         <div class="sideContainer">
             <div class="infoList">
-                <div class="totalBooks">Total books: </div>
-                <div class="totalPages">Total pages: </div>
-                <div class="totalRead">Total read: </div>
-                <div class="totalUnread">Total unread: </div>
+                <div class="totalBooks"></div>
+                <div class="totalPages"></div>
+                <div class="totalRead"></div>
+                <div class="totalUnread"></div>
             </div>
 
             <div class="addBookForm">
@@ -36,15 +36,15 @@
                     <form action="#" id="newBookForm">
                         <div> 
                             <p><label for="author">Author:</label></p>
-                            <input type="text" id="author" name="author" maxlength="25" required>
+                            <input type="text" id="author" name="author" maxlength="12" required>
                         </div>
                         <div> 
                             <p><label for="title">Title:</label></p>
-                            <input type="text" id="title" name="title" maxlength="25" required>
+                            <input type="text" id="title" name="title" maxlength="12" required>
                         </div>
                         <div> 
                             <p><label for="pages">Pages:</label></p>
-                            <input type="number" id="pages" name="pages" maxlength="25" required>
+                            <input type="number" id="pages" name="pages" maxlength="10" required>
                         </div>
                         <div>
                             <p><label class="readCheckbox">Read?</label></p>
@@ -55,7 +55,6 @@
                 <div class="addBookButton">
                     <button type="button">Add book</button>
                 </div>
-                <div class="testbutton">TEST!</div>
             </div>
         </div>
       </div>
