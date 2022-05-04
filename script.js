@@ -125,7 +125,7 @@ function createBookCard(){
     function readStatus(){
         if (myLibrary[index].isRead){
             readButton.textContent="Read"
-            readButton.style.backgroundColor = "rgb(0, 182, 61)";
+            readButton.style.backgroundColor = "rgb(15, 179, 0)";
         } else {
             readButton.textContent="Unread"
             readButton.style.backgroundColor = "red";
