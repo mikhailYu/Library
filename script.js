@@ -5,10 +5,11 @@ totalBooks = document.querySelector(".totalBooks"),
 totalPages = document.querySelector(".totalPages"),
 totalRead = document.querySelector(".totalRead"),
 totalUnread = document.querySelector(".totalUnread"),
+bookFormContainer = document.querySelector(".addBookForm"),
 
 myLibrary = [],
 bookCard, newBook, formDataTitle, formAuthor,formTitle,
-formPages,formRead,
+formPages,formRead, invalidMessage = 0,
 totalBooksValue = 0, 
 totalReadValue = 0, 
 totalUnreadValue = 0,
@@ -16,6 +17,7 @@ totalPageValue
 updateTotalBooks()
 updateTotalPages()
 updateRead()
+
 
 addBookButton.addEventListener("click",submitForm);
 
@@ -34,9 +36,39 @@ function Book(title, author, pages, isRead){
 
 function submitForm(){
     updateFormData()
-    addBookToLibrary()
-    addBookForm.reset()
+
+    if(checkValidity()){
+        addBookToLibrary()
+        invalidFormToggle(1)
+        addBookForm.reset()
+    } else {
+        invalidFormToggle(0)
+    }
 };
+
+function invalidFormToggle(isValid){
+if (isValid == 0 && invalidMessage == 0){
+    invalidMessage = document.createElement("p")
+    invalidMessage.textContent = "Please fill out the form"
+    invalidMessage.style.color = "red"
+    bookFormContainer.appendChild(invalidMessage)
+    } else if (isValid == 1 && invalidMessage !== 0){
+        invalidMessage.remove()
+        invalidMessage = 0
+    }
+}
+
+
+function checkValidity(){
+    if(formAuthor.value == "" || formTitle.value == "" 
+    || formPages.value <1 )
+    {
+        return false
+    } else 
+    {
+        return true
+    }
+}
 
 
 function updateFormData(){

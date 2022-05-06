@@ -105,7 +105,6 @@ div[class^="cardContainer"]
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
     height: 100%;
     
 }
@@ -118,6 +117,7 @@ div[class^="cardContainer"]
 {
     font-size: 25px;
     font-weight: bold;
+    padding: 5px;
 }
 
 .cardOptions
@@ -170,10 +170,11 @@ div[class^="cardContainer"]
 .sideContainer
 {
     grid-column: 2 / 3;
-    background-color: rgb(235, 135, 20);
+    background-color: rgb(228, 139, 23);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    gap: 15px;
 }
 
 .infoList
@@ -181,17 +182,19 @@ div[class^="cardContainer"]
     display: flex;
     flex-direction: column;
     color: white;
-    font-size: 30px;
-    height: 30%;
+    font-size: 25px;
+    height: 200px;
     min-height: 100px;
-    gap: 15px;
+    gap: 10px;
     padding-top: 30px;
     padding-left: 40px;
+
 }
 .addBookForm
 {
     display: flex;
     flex-direction: column;
+    
     color: white;
     font-size: 20px;
     
@@ -199,6 +202,7 @@ div[class^="cardContainer"]
     gap: 20px;
     padding-top: 30px;
     padding-left: 40px;
+
 }
 label{
     color: white;
