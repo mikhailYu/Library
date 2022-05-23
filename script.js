@@ -8,7 +8,7 @@ totalUnread = document.querySelector(".totalUnread"),
 bookFormContainer = document.querySelector(".addBookForm"),
 
 myLibrary = [],
-bookCard, newBook, formDataTitle, formAuthor,formTitle,
+bookCard, formDataTitle, formAuthor,formTitle,
 formPages,formRead, invalidMessage = 0,
 totalBooksValue = 0, 
 totalReadValue = 0, 
@@ -21,17 +21,24 @@ updateRead()
 
 addBookButton.addEventListener("click",submitForm);
 
-function Book(title, author, pages, isRead){
+class Book{
+    constructor({title, author, pages, isRead}){
     this.title = title
     this.author = author
+    this.isRead = isRead;
+    }
+
+    create() {
 
     if (!pages)
     {this.pages = 0} 
     else 
     {this.pages = pages}
     
-    this.isRead = isRead
     this.active = true
+
+ }
+    
 };
 
 function submitForm(){
@@ -77,15 +84,18 @@ function updateFormData(){
     formPages = document.getElementById("pages")
     formRead = document.getElementById("readCheckbox")
 };
+
 function addBookToLibrary(){
-newBook = new Book (formTitle.value, formAuthor.value, 
-    formPages.value, formRead.checked)
+let newBook = new Book ({title: formTitle.value, author: formAuthor.value, 
+    pages: formPages.value, isRead: formRead.checked})
+    newBook.create();
 myLibrary.push(newBook);
 createBookCard()
 updateTotalBooks()
 updateTotalPages()
 updateRead()
 };
+
 
 function createBookCard(){
     let index = myLibrary.length-1, createCardContainer, createCardTextContainer, createCardUpperText,
